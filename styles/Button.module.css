@@ -1,0 +1,19 @@
+.button {
+    padding: 10px 15px;
+    border: 1px solid #000;
+    background-color: #FFF;
+    color: #000;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.buttonPrimary {
+    border: none;
+    background-color: #000;
+    color: #FFF;
+}
+
+.buttonBig {
+    width: 100%;
+}
