@@ -6,23 +6,36 @@ type Data = {
     results: object[]
 }
 
-const buscar = async (id: Number, nombre: string | null, idDepartamento: Number) => {
-    nombre = !nombre ? null : `'${nombre}'`
+interface Municipio {
+    Id: Number | null,
+    Nombre: string | null,
+    IdDepartamento: Number | null
+}
 
-    const response = await connection.query(`SELECT * FROM "Ubicacion"."MUNICIPIO_READ"(${id}, ${nombre}, ${idDepartamento})`)
+const buscar = async (values: Municipio): Promise<any> => {
+    let { Id, Nombre, IdDepartamento } = values
+
+    Id = !Id ? null : Id
+    Nombre = !Nombre ? null : `'${Nombre}'`
+    IdDepartamento = !IdDepartamento ? null : IdDepartamento
+
+    const response = await connection.query(`SELECT * FROM "Ubicacion"."MUNICIPIO_READ"(${Id}, ${Nombre}, ${IdDepartamento})`)
     
     return response
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const { method, body } = req
-    const { Id, Nombre, IdDepartamento } = body
 
-    switch(method) {
-        case "GET":
-            const response = await buscar(Id, Nombre, IdDepartamento)
-            return res.status(200).json({ message: "Obteniendo municipios", results: response.rows })
-        default:
-            return res.status(404).json({ message: "No se obtuvieron resultados", results: [] })
+    try{
+        switch(method) {
+            case "GET":
+                const response = await buscar(body)
+                return res.status(200).json({ message: "Obteniendo municipios", results: response.rows })
+            default:
+                return res.status(404).json({ message: "No se obtuvieron resultados", results: [] })
+        }
+    } catch(error) {
+        return res.status(404).json({ message: (error as Error).message, results: [] })
     }
 }

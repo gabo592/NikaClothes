@@ -19,7 +19,7 @@ interface Empleado {
     IdMunicipio: Number | null
 }
 
-const crear = async (values: Empleado) => {
+const crear = async (values: Empleado): Promise<any> => {
     let { 
         PrimerNombre,
         SegundoNombre,
@@ -45,7 +45,7 @@ const crear = async (values: Empleado) => {
     return response
 }
 
-const buscar = async (values: Empleado) => {
+const buscar = async (values: Empleado): Promise<any> => {
     let {
         Id, 
         PrimerNombre,
@@ -75,7 +75,7 @@ const buscar = async (values: Empleado) => {
     return response
 }
 
-const actualizar = async (values: Empleado) => {
+const actualizar = async (values: Empleado): Promise<any> => {
     let {
         Id, 
         PrimerNombre,
@@ -103,7 +103,7 @@ const actualizar = async (values: Empleado) => {
     return response
 }
 
-const eliminar = async (values: Empleado) => {
+const eliminar = async (values: Empleado): Promise<any> => {
     let { Id } = values
 
     Id = !Id ? null : Id

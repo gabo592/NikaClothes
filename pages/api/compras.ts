@@ -14,7 +14,7 @@ interface Compra {
     IdProveedor: Number | null
 }
 
-const crear = async (values: Compra) => {
+const crear = async (values: Compra): Promise<any> => {
     let {
         Fecha,
         IdEmpleado,
@@ -30,7 +30,7 @@ const crear = async (values: Compra) => {
     return response
 }
 
-const buscar = async (values: Compra) => {
+const buscar = async (values: Compra): Promise<any> => {
     let {
         Id,
         Fecha,
@@ -50,7 +50,7 @@ const buscar = async (values: Compra) => {
     return response
 }
 
-const actualizar = async (values: Compra) => {
+const actualizar = async (values: Compra): Promise<any> => {
     let {
         Id,
         Fecha,
@@ -68,7 +68,7 @@ const actualizar = async (values: Compra) => {
     return response
 }
 
-const eliminar = async (values: Compra) => {
+const eliminar = async (values: Compra): Promise<any> => {
     let { Id } = values
 
     Id = !Id ? null : Id
