@@ -1,0 +1,23 @@
+.layout {
+    color: #000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor {
+    width: 300px;
+    padding: 0px 10px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .contenedor {
+        width: 700px;
+    }
+}
+  
+@media screen and (min-width: 1025px) {
+    .contenedor {
+        width: 1200px;
+    }
+}

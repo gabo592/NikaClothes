@@ -4,9 +4,7 @@ import style from "../../styles/Home.module.css"
 
 const Logo = (): JSX.Element => {
     return(
-        <div className={style.logoContainer}>
-            <Image src={logo} alt={"Logo de NikaClothes"} className={style.logo}></Image>
-        </div>
+        <Image src={logo} alt={"Logo de NikaClothes"} className={style.logo}></Image>
     )
 }
 

@@ -8,7 +8,39 @@
 
 .section {
     background-color: #FFF;
-    max-width: 700px;
+    width: 300px;
     padding: 20px 25px;
     box-shadow: 0px 2px 3px rgb(0, 0, 0, 0.3);
+}
+
+.logoContainer {
+    width: 250px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .container {
+        padding: 300px 0px;
+    }
+    
+    .section {
+        width: 400px;
+    }
+
+    .logoContainer {
+        width: 340px;
+    }
+}
+  
+@media screen and (min-width: 1025px) {
+    .container {
+        padding: 100px 0px;
+    }
+
+    .section {
+        width: 400px;
+    }
+
+    .logoContainer {
+        width: 340px;
+    }
 }
