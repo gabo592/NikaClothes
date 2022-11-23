@@ -1,15 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import connection from "../../utils/Database"
 
-type Data = {
-    message: string,
-    results: object[]
-}
-
 interface CategoriaProducto {
     Id: Number | null,
     Nombre: string | null,
     Estado: boolean | null
+}
+
+type Data = {
+    message: string,
+    results: CategoriaProducto[]
 }
 
 const crear = async (values: CategoriaProducto): Promise<any> => {
@@ -78,6 +78,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 return res.status(404).json({ message: "No se obtuvieron resultados", results: [] })
         }
     } catch (error) {
-        return res.status(404).json({ message: (error as Error).message, results: [] })
+        return res.status(404).end()
     }
 }

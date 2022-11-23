@@ -1,17 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import connection from "../../utils/Database"
 
-type Data = {
-    message: string,
-    results: object[]
-}
-
 interface Compra {
     Id: Number | null,
     Fecha: Date | null,
     Estado: boolean | null,
     IdEmpleado: Number | null,
     IdProveedor: Number | null
+}
+
+type Data = {
+    message: string,
+    results: Compra[]
 }
 
 const crear = async (values: Compra): Promise<any> => {
