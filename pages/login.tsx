@@ -19,7 +19,9 @@ const Login = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <section className={style.section}>
-                <Logo></Logo>
+                <div className={style.logoContainer}>
+                    <Logo></Logo>
+                </div>
                 <Formik
                     initialValues={{
                         name: '',
