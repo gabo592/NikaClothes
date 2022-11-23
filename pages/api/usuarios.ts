@@ -116,7 +116,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 return res.status(200).json({ message: "Eliminando Usuario", results: [] })
 
             default:
-                return res.status(404).json({ message: "No se obtuvieron resultados", results: [] })
+                return res.status(404).end()
         }
     } catch (error) {
         return res.status(404).json({ message: (error as Error).message, results: [] })
