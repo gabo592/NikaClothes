@@ -8,12 +8,20 @@
     margin-bottom: 10px;
 }
 
-.buttonPrimary {
+.primary {
     border: none;
     background-color: #000;
     color: #FFF;
 }
 
-.buttonBig {
+.big {
     width: 100%;
+}
+
+.button:hover {
+    background-color: #EEE;
+}
+
+.primary:hover {
+    background-color: rgb(20, 20, 20)
 }

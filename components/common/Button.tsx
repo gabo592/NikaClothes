@@ -10,8 +10,8 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({ primary, big, children }): JSX.Element => {
     let classList: string[] = []
     classList.push(style.button)
-    classList.push(primary ? style.buttonPrimary : "")
-    classList.push(big ? style.buttonBig : "")
+    classList.push(primary ? style.primary : "")
+    classList.push(big ? style.big : "")
 
     return(
         <button className={classList.join(" ")}>{children}</button>
