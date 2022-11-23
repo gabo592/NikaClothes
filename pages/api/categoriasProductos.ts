@@ -78,6 +78,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 return res.status(404).json({ message: "No se obtuvieron resultados", results: [] })
         }
     } catch (error) {
-        return res.status(404).json({ message: (error as Error).message, results: [] })
+        return res.status(404).end()
     }
 }
